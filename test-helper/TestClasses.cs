@@ -32,14 +32,8 @@ namespace test_helper
                 foreach (var question in questionList)
                     try
                     {
-                        try
-                        {
-                            question.answers = question.answers.Select(x => new {value = x, order = rng.Next()})
+                        question.answers = question.answers.Select(x => new {value = x, order = rng.Next()})
                                 .OrderBy(x => x.order).Select(x => x.value).ToList();
-                        }
-                        catch
-                        {
-                        }
                     }
                     catch (Exception e)
                     {
